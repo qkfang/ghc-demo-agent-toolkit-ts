@@ -5,7 +5,7 @@ This repo showcases GitHub Copilot coding agents and reusable skills that speed 
 ## What You Get
 
 - A working Next.js app under [web/](web/) for hands-on examples.
-- A 3-phase agent workflow under [.github/agents/](.github/agents/) for requirements, technical design, and task planning.
+- A 2-phase agent workflow under [.github/agents/](.github/agents/) for combined planning and task planning.
 - Agent and skill docs under [.github/skills/](.github/skills/) to guide Copilot on best practices.
 - Consistent conventions for components, features, and state that keep changes small and reviewable.
 
@@ -20,20 +20,18 @@ This repo showcases GitHub Copilot coding agents and reusable skills that speed 
 ## Repo Tour
 
 - [AGENTS.md](AGENTS.md) - How agents should work in this repo.
-- [.github/agents/](.github/agents/) - Built-in multi-phase planning agents:
-  - [📋 Requirements](.github/agents/requirements.agent.md) - Defines clear, testable feature requirements.
-  - [📝 Plan](.github/agents/plan.agent.md) - Converts approved requirements into technical design.
-  - [✅ Task](.github/agents/task.agent.md) - Breaks approved design into actionable implementation tasks.
+- [.github/agents/](.github/agents/) - Built-in planning agents:
+  - [📝 Plan](.github/agents/plan.agent.md) - Gathers requirements and produces a combined planning output with technical design.
+  - [✅ Task](.github/agents/task.agent.md) - Breaks the approved plan into actionable implementation tasks.
 - [web/](web/) - Next.js application code.
 - [.github/skills/](.github/skills/) - Skill references that guide Copilot on React composition, Next.js patterns, UI composition, and state management.
 
 ## Agent Workflow
 
-Use the three agents in order for spec-driven delivery:
+Use the two agents in order for spec-driven delivery:
 
-1. **📋 Requirements** → capture and approve what to build.
-2. **📝 Plan** → define architecture and implementation approach.
-3. **✅ Task** → generate an execution-ready task breakdown.
+1. **📝 Plan** → capture requirements and define the technical approach in one approved plan output.
+2. **✅ Task** → generate an execution-ready task breakdown from that approved plan.
 
 Each agent is phase-scoped and writes only its phase artifact under `specs/features/{NNN}-{feature-name}/`.
 
