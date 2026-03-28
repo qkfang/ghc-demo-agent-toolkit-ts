@@ -40,6 +40,7 @@ Each agent is phase-scoped and writes only its phase artifact under `specs/featu
 From [web/](web/):
 
 ```bash
+powershell -c "irm bun.sh/install.ps1 | iex"
 bun install
 bun dev
 ```
