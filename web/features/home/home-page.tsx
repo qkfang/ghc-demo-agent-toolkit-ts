@@ -1,7 +1,10 @@
 "use client";
 
-import { Heading } from "@/components/ui/heading";
+import Link from "next/link";
 import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
 
 export const HomePage = () => {
   return (
@@ -13,6 +16,11 @@ export const HomePage = () => {
       <p className="text-lg text-muted-foreground text-balance">
         GitHub Copilot Agents and Skills that accelerate modern frontend development.
       </p>
+      <div>
+        <Link href="/todo">
+          <Button>Try Todo App</Button>
+        </Link>
+      </div>
     </div>
   );
 };
